@@ -28,11 +28,7 @@
     bookingRequired: false,
 
     // TODO: Confirm payment methods.
-    paymentMethods: [
-      { name: 'Cash', icon: '£' },
-      { name: 'Card', icon: '▭' },
-      { name: 'Contactless', icon: ')))' }
-    ],
+    paymentMethods: ['Cash', 'Card', 'Contactless'],
 
     // TODO: CONFIRM OPENING HOURS. Times use 24-hour HH:MM format in Europe/London.
     openingHours: {
@@ -107,8 +103,8 @@
   if (openDaysItem) {
     const value = openDaysItem.querySelector('strong');
     const label = openDaysItem.querySelector('span:last-child');
-    if (value) value.textContent = `${openDayCount} DAYS`;
-    if (label) label.textContent = openDayCount === 7 ? 'Open Weekly' : 'Each Week';
+    if (value) value.textContent = `${openDayCount} days`;
+    if (label) label.textContent = openDayCount === 7 ? 'open each week' : 'each week';
   }
 
   document.querySelectorAll('[data-hours-day]').forEach((row) => {
@@ -122,10 +118,7 @@
   if (paymentList) {
     paymentList.replaceChildren(...BUSINESS_CONFIG.paymentMethods.map((method) => {
       const item = document.createElement('li');
-      const icon = document.createElement('span');
-      icon.setAttribute('aria-hidden', 'true');
-      icon.textContent = method.icon;
-      item.append(icon, document.createTextNode(` ${method.name}`));
+      item.textContent = method;
       return item;
     }));
   }
@@ -151,9 +144,9 @@
       if (!schedule) continue;
       if (offset === 0 && currentMinutes >= toMinutes(schedule.open)) continue;
       const relativeDay = offset === 0 ? 'today' : offset === 1 ? 'tomorrow' : `on ${nextDay}`;
-      return `Closed · Opens ${relativeDay} at ${formatTime(schedule.open)}`;
+      return `Closed. Opens ${relativeDay} at ${formatTime(schedule.open)}`;
     }
-    return 'Closed · Please call for opening hours';
+    return 'Closed. Please call for opening hours';
   };
 
   const updateOpenStatus = () => {
@@ -161,7 +154,7 @@
     const schedule = BUSINESS_CONFIG.openingHours[london.day];
     const isOpen = Boolean(schedule && london.minutes >= toMinutes(schedule.open) && london.minutes < toMinutes(schedule.close));
     const message = isOpen
-      ? `Open now · Closes at ${formatTime(schedule.close)}`
+      ? `Open now. Closes at ${formatTime(schedule.close)}`
       : findNextOpening(london.day, london.minutes);
 
     document.querySelectorAll('[data-open-status]').forEach((status) => {
@@ -294,7 +287,7 @@
       mapLink.href = BUSINESS_CONFIG.directionsUrl;
       mapLink.target = '_blank';
       mapLink.rel = 'noopener noreferrer';
-      mapLink.textContent = 'Open in Google Maps ↗';
+      mapLink.textContent = 'Open in Google Maps';
       actions.append(help, mapLink);
       wrapper.append(mapFrame, actions);
       mapFrame.addEventListener('load', () => mapShell.removeAttribute('aria-busy'));
@@ -365,10 +358,12 @@
   let cookieSettingsTrigger = null;
   const showCookieBanner = (moveFocus = false) => {
     cookieBanner.hidden = false;
+    document.body.classList.add('cookie-panel-open');
     if (moveFocus) cookieBanner.querySelector('[data-cookie-decline]')?.focus();
   };
   const hideCookieBanner = () => {
     cookieBanner.hidden = true;
+    document.body.classList.remove('cookie-panel-open');
     cookieSettingsTrigger?.focus();
     cookieSettingsTrigger = null;
   };

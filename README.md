@@ -26,7 +26,7 @@ Most editable placeholders are grouped in the `BUSINESS_CONFIG` block at the top
 - all vehicle-size package prices
 - GA4 Measurement ID (currently the disabled placeholder `G-XXXXXXXXXX`)
 
-Also confirm the temporary service/package contents and typical timing answers in `index.html`. When hours or FAQ answers change, update the matching visible HTML and JSON-LD so they remain identical. Add geo coordinates to the business schema only after they have been verified.
+Also confirm the service/package contents in `index.html` and `services.html`, plus the typical timing answers in `index.html` and `faq.html`. When hours or FAQ answers change, update the matching visible HTML and JSON-LD so they remain identical. Add geo coordinates to the business schema only after they have been verified.
 
 Before launch, confirm the legal name of the privacy data controller and the hosting provider/log-retention details in `privacy.html`. Recheck the existing phone, directions and Google review links on the deployed site.
 
