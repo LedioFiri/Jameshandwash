@@ -7,11 +7,10 @@
   <meta name="description" content="Privacy information for the James Hand Carwash website, including website usage, phone contact and third-party Google services.">
   <meta name="theme-color" content="#111111">
 
-  <!-- Canonical URL placeholder: replace the domain and uncomment before launch.
-  <link rel="canonical" href="https://your-domain.example/privacy.html">
-  -->
+  <link rel="canonical" href="https://lediofiri.github.io/Jameshandwash/privacy.html">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js');</script>
   <script src="script.js" defer></script>
 </head>
 <body class="legal-page">
@@ -52,16 +51,17 @@
       </nav>
 
       <div class="legal-copy">
+        <!-- TODO: Confirm the legal data-controller identity and hosting provider/log-retention details before launch. -->
         <section id="about" aria-labelledby="about-title">
           <h2 id="about-title">About this notice</h2>
           <p>This privacy policy explains how James Hand Carwash handles personal information in connection with this website.</p>
           <p><strong>James Hand Carwash</strong><br>Kingston Rd<br>Leatherhead<br>KT22 0EE<br>United Kingdom</p>
-          <p>Last updated: 30 August 2026.</p>
+          <p>Last updated: 1 September 2026.</p>
         </section>
 
         <section id="website" aria-labelledby="website-title">
           <h2 id="website-title">Website usage</h2>
-          <p>This is a static information website. It does not provide user accounts, an online booking system, a payment facility or a contact form. The website files do not ask you to enter personal information and do not store information in your browser.</p>
+          <p>This is a static information website. It does not provide user accounts, an online booking system, a payment facility or a contact form. The website files do not ask you to enter personal information. Your analytics choice is stored in your browser so the site can remember it.</p>
           <p>When the site is placed on a web host, that hosting provider may process basic technical request information—such as an IP address, request time, requested page and browser details—to deliver and secure the website. The exact provider and its log-retention period depend on the hosting service selected before launch.</p>
           <p>Any necessary technical information would be used only to operate, protect and troubleshoot the website. It is not sold or used by James Hand Carwash for advertising.</p>
         </section>
@@ -70,6 +70,7 @@
           <h2 id="contact-title">Calls and contact links</h2>
           <p>Selecting a telephone link asks your phone or device to start a call. The website itself does not receive information simply because you select that link.</p>
           <p>If you call James Hand Carwash, the business may receive your telephone number and any information you choose to provide. That information is used to answer your enquiry or arrange the service you request and should be kept only for as long as it is needed for that purpose, subject to any legal record-keeping duties.</p>
+          <p>The WhatsApp link opens a conversation with a suggested message. The message is not sent unless you choose to send it. WhatsApp handles your visit and any message under its own privacy terms.</p>
         </section>
 
         <section id="reviews-google" aria-labelledby="google-title">
@@ -82,8 +83,8 @@
           <h3>Links to Google</h3>
           <p>Directions, opening-hours and review buttons are links to Google. If you select one, your browser or device connects to Google and Google handles information under its own privacy terms. James Hand Carwash does not receive information about what you do on Google through these links.</p>
 
-          <h3>Photography credit</h3>
-          <p>The illustrative hero photograph is stored on this website, so viewing it does not connect you to Unsplash. If you select its photography credit link, you leave this website and Unsplash handles that visit under its own privacy terms.</p>
+          <h3>Photography credits</h3>
+          <p>The illustrative hero and gallery photographs are stored on this website, so viewing them does not connect you to Unsplash or Pexels. If you select a photography credit link, you leave this website and the destination service handles that visit under its own privacy terms.</p>
 
           <h3>Optional Google Map</h3>
           <p>The Google Map on the location section is not loaded automatically. It connects to Google only after you select “Load Google Map”. When loaded, Google may receive technical information such as your IP address and may use cookies or similar technologies under its own policies.</p>
@@ -93,9 +94,10 @@
 
         <section id="cookies" aria-labelledby="cookies-title">
           <h2 id="cookies-title">Cookies and analytics</h2>
-          <p>James Hand Carwash does not install analytics, advertising pixels or marketing trackers on this website. The site itself does not set cookies or use local storage.</p>
-          <p>Third-party cookies or similar technologies may be used by Google only if you choose to load the optional map or leave this website through a Google link. Those services are controlled by Google, not by this static website.</p>
-          <p>If analytics, advertising tools, online booking, forms or other tracking features are added later, this notice and the site’s consent controls must be reviewed before those features are enabled.</p>
+          <p>The website offers optional Google Analytics. It is disabled by default and its script is loaded only after you select “Accept” in the cookie panel. Selecting “Decline” leaves analytics disabled.</p>
+          <p>If accepted, Google Analytics may process technical and usage information such as pages viewed, approximate location, device and browser details, and referral information. It may set <code>_ga</code> and <code>_ga_&lt;container-id&gt;</code> cookies. The website is not configured to use analytics for advertising.</p>
+          <p>The site stores your “accepted” or “declined” choice in local storage under <code>james_cookie_consent_v1</code>. This preference is necessary to remember your decision. You can revisit your decision using “Cookie settings” in the footer.</p>
+          <p>Third-party cookies or similar technologies may also be used by Google if you separately choose to load the optional map or leave this website through a Google link. See the <a href="cookies.html">Cookie Policy</a> for details.</p>
         </section>
 
         <section id="rights" aria-labelledby="rights-title">
@@ -124,13 +126,25 @@
           <span class="brand-copy"><strong>James</strong><span>Hand Carwash</span></span>
         </a>
         <address>Kingston Rd, Leatherhead KT22 0EE</address>
-        <a href="tel:+447732384211">+44 7732 384211</a>
+        <a href="tel:+447732384211" data-phone-link data-phone-text>+44 7732 384211</a>
+      </div>
+      <div class="footer-hours">
+        <strong>Opening hours</strong>
+        <!-- TODO: CONFIRM OPENING HOURS. -->
+        <span>Mon–Sat · 08:30–17:30</span>
+        <span>Sunday · 09:00–17:00</span>
+        <small>Bank holiday hours may vary.</small>
       </div>
       <nav class="footer-nav" aria-label="Footer navigation">
-        <a href="index.html#services">Services</a>
-        <a href="index.html#reviews">Reviews</a>
-        <a href="index.html#location">Location</a>
+        <a href="services.html">Services</a>
+        <a href="prices.html">Prices</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="faq.html">FAQ</a>
+        <a href="location.html">Find Us</a>
         <a href="privacy.html" aria-current="page">Privacy Policy</a>
+        <a href="cookies.html">Cookie Policy</a>
+        <button class="footer-link-button" type="button" data-cookie-settings>Cookie settings</button>
       </nav>
     </div>
     <div class="container footer-bottom">
